@@ -187,6 +187,13 @@ export default {
 
       return response.data;
     },
+    async getIssue({
+      repoFullname, issueNumber,
+    }) {
+      const response = await this._client().request(`GET /repos/${repoFullname}/issues/${issueNumber}`, {});
+
+      return response.data;
+    },
     async updateIssue({
       repoFullname, issueNumber, data,
     }) {
